@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,15 +17,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")" title="ENACTUS FTT" class="links">
+                    <img alt="ENACTUS FTT" src="@Url.Content("~/Content/LogoEnactusFTTSemFundo.png")" height="50" width="80">
+                </a>
+                @* @Html.ActionLink("ENACTUS FTT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Processo Seletivo", "ProcessoSeletivo", "Home")</li>
+                    <li>@Html.ActionLink("Sobre o Time", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @* @Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
@@ -33,7 +36,17 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <label>ACOMPANHE-NOS</label>
+            <br/>
+            <a href="https://www.facebook.com/EnactusFTT/?ref=br_rs" title="Facebook Enactus FTT" class="links">
+                <img alt="Facebook Icone" src="~/Content/facebookIcone.png" height="18" width="18" />
+            </a>
+            <a href="https://www.instagram.com/enactus_ftt/" title="Instagram Enactus FTT" class="links">
+                <img alt="Instagram Icone" src="~/Content/InstagramIcone.png" height="22" width="22" />
+            </a>
+            <br/>
+            <br/>
+            <p>&copy; Enactus FTT @DateTime.Now.Year</p>
         </footer>
     </div>
 
