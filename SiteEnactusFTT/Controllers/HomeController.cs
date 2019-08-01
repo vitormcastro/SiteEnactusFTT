@@ -26,5 +26,12 @@ namespace SiteEnactusFTT.Controllers
 
             return View();
         }
+
+        public ActionResult ProcessoSeletivo()
+        {
+            ViewBag.Message = "Processo Seletivo page.";
+
+            return View();
+        }
     }
 }
